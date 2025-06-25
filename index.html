@@ -134,8 +134,7 @@
 
         const display = document.getElementById('display');
 
-        function appendNumber(number) {
-            if (currentInput === '0' || resetScreen) {
+        if (number === '.' && currentInput.includes('.')) return;
                 currentInput = number;
                 resetScreen = false;
             } else {
