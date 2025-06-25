@@ -134,14 +134,15 @@
 
         const display = document.getElementById('display');
 function appendNumber(number) {
-        if (number === '.' && currentInput.includes('.')) return;
-                currentInput = number;
-                resetScreen = false;
-            } else {
-                currentInput += number;
-            }
-            display.innerText = currentInput;
-        }
+    if (number === '.' && currentInput.includes('.')) return;
+    if (currentInput === '0' || resetScreen) {
+        currentInput = number;
+        resetScreen = false;
+    } else {
+        currentInput += number;
+    }
+    display.innerText = currentInput;
+}
 
         function appendOperator(op) {
             if (op === '√') {
